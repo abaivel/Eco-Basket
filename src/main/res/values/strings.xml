@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Eco-basket</string>
+    <string-array name="cities2">
+        <item>Paris (75056)</item>
+        <item>Marseille (13055)</item>
+        <item>Lyon (69123)</item>
+        <item>Toulouse (31555)</item>
+        <item>Nice (06088)</item>
+        <item>Nantes (44109)</item>
+        <item>Montpellier (34172)</item>
+        <item>Strasbourg (67482)</item>
+        <item>Bordeaux (33063)</item>
+        <item>Lille (59350)</item>
+        <item>Rennes (35238)</item>
+        <item>Reims (51454)</item>
+        <item>Toulon (83137)</item>
+        <item>Le Havre (76351)</item>
+        <item>Grenoble (38185)</item>
+        <item>Dijon (21231)</item>
+        <item>Angers (49007)</item>
+        <item>Villeurbanne (69266)</item>
+        <item>Nîmes (30189)</item>
+        <item>Clermont-Ferrand (63113)</item>
+        <item>Aix-en-Provence (13001)</item>
+        <item>Brest (29019)</item>
+        <item>Tours (37261)</item>
+        <item>Amiens (80021)</item>
+        <item>Limoges (87085)</item>
+        <item>Annecy (74010)</item>
+        <item>Boulogne-Billancourt (92012)</item>
+        <item>Perpignan (66136)</item>
+        <item>Metz (57463)</item>
+        <item>Besançon (25056)</item>
+        <item>Orléans (45234)</item>
+        <item>Rouen (76540)</item>
+        <item>Montreuil (93048)</item>
+        <item>Argenteuil (95018)</item>
+        <item>Mulhouse (68224)</item>
+        <item>Caen (14118)</item>
+        <item>Nancy (54395)</item>
+        <item>Roubaix (59512)</item>
+        <item>Tourcoing (59599)</item>
+        <item>Nanterre (92050)</item>
+        <item>Vitry-sur-Seine (94081)</item>
+        <item>Créteil (94028)</item>
+        <item>Avignon (84007)</item>
+        <item>Poitiers (86194)</item>
+        <item>Aubervilliers (93001)</item>
+    </string-array>
+
+    <string-array name="cities">
+        <item>Paris (75)</item>
+        <item>Marseille (13)</item>
+        <item>Lyon (69)</item>
+        <item>Toulouse (31)</item>
+        <item>Nice (06)</item>
+    </string-array>
+</resources>
+

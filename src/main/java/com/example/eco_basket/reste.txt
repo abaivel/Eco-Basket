@@ -1,0 +1,156 @@
+package com.example.eco_basket
+
+import android.annotation.SuppressLint
+import android.graphics.Rect
+import android.os.Bundle
+import android.os.Handler
+import android.util.DisplayMetrics
+import android.view.MotionEvent
+import android.view.View
+import android.view.Window
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var objet : ImageView
+    private lateinit var poubelleVerte : ImageView
+    private lateinit var poubelleMarron : ImageView
+    private lateinit var poubelleGrise : ImageView
+    private lateinit var poubelleJaune : ImageView
+    private lateinit var faux : ImageView
+    private lateinit var vrai : ImageView
+    var d=0
+    var yObjet=0;
+    var poubelles = mutableListOf<ImageView>()
+    var photosObjet = listOf(R.drawable.bouteille,R.drawable.carton,R.drawable.pomme)
+    var objetsPoubelles =mapOf(R.drawable.bouteille to "poubelleJaune",R.drawable.carton to "poubelleJaune",R.drawable.pomme to "poubelleVerte")
+    var nomObjet = R.drawable.bouteille
+    var num=0;
+    //var objet: ImageView = findViewById<ImageView>(R.id.objet)
+    //var poubelleVerte: ImageView = findViewById<ImageView>(R.id.poubelleVerte)
+    //var poubelleMarron: ImageView = findViewById<ImageView>(R.id.poubelleMarron)
+    //var poubelleGris: ImageView = findViewById<ImageView>(R.id.poubelleGrise)
+    @SuppressLint("ClickableViewAccessibility")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        supportActionBar?.hide()
+        //requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
+        /*getSupportActionBar()?.hide(); // hide the title bar
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN); //enable full screen
+        */
+        /*val displayMetrics = DisplayMetrics()
+        var x=0
+        var y=0
+        displayMetrics.apply {
+            // screen width in dp
+            widthPixels.also { x = it }
+
+            // screen height in dp
+            y = heightPixels
+        }
+        println("x="+x+"  y="+y)*/
+        /*val screenUtils = ScreenUtils();
+        val height = screenUtils.getScreenHeight(this);
+        val width = screenUtils.getScreenWidth(this);*/
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        var width = displayMetrics.widthPixels
+        var height = displayMetrics.heightPixels
+        println("largeur="+width+"  hauteur="+height)
+        findViewById<ImageView>(R.id.objet).also { objet = it }
+        findViewById<ImageView>(R.id.poubelleVerte).also { poubelleVerte = it }
+        findViewById<ImageView>(R.id.poubelleMarron).also { poubelleMarron = it }
+        findViewById<ImageView>(R.id.poubelleGrise).also { poubelleGrise = it }
+        findViewById<ImageView>(R.id.poubelleJaune).also { poubelleJaune = it }
+        findViewById<ImageView>(R.id.faux).also { faux = it }
+        findViewById<ImageView>(R.id.vrai).also { vrai = it }
+        poubelles = mutableListOf(poubelleMarron,poubelleJaune,poubelleGrise,poubelleVerte)
+        /*objet.setOnClickListener{
+            println("appui")
+        }*/
+        /*List<String> liste_date_min = CreationEvenementActivity.decoupDateHeure(CreationEvenementActivity.date_fin.getText().toString());
+        System.out.println(choix_jusqua.getMinDate());
+        choix_jusqua.setMinDate(new Date().getTime());
+        System.out.println(choix_jusqua.getMinDate());*/
+        /*Date currentdate=new Date();
+        String dateActuelle=currentdate.toString();
+        System.out.println(dateActuelle);
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // here set the pattern as you date in string was containing like date/month/year
+            Date d = sdf.parse("20/12/2011");
+            System.out.println(d);
+        }catch(ParseException ex){
+            // handle parsing exception if date string was different from the pattern applying into the SimpleDateFormat contructor
+        }
+        System.out.println(CreationEvenementActivity.decoupDateHeure(CreationEvenementActivity.date_fin.getText().toString()));
+    */
+        objet.post(Runnable {
+             d=(height-(objet.y+objet.height)).toInt()
+            yObjet=objet.y.toInt()
+            println("d = "+d)
+        })
+        objet.setOnLongClickListener{
+            println("appui")
+            true
+        }
+        objet.setOnTouchListener(object : View.OnTouchListener {
+            //@SuppressLint("ClickableViewAccessibility")
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                if(event?.getAction() == MotionEvent.ACTION_UP){
+                    for (p in poubelles){
+                        if (((p.x)<=objet.x && objet.x<=(p.x+p.width-objet.width)) && ((p.y)<=objet.y && objet.y<=(p.y+p.height-objet.height))){
+                            println(p.getTag())
+                            println(objetsPoubelles[nomObjet])
+                            if (p.getTag()==objetsPoubelles[nomObjet]){
+                                vrai.visibility=View.VISIBLE
+                                Handler().postDelayed({ vrai.visibility=View.INVISIBLE }, 1000)
+                                num+=1
+                                if (num<photosObjet.size) {
+                                    nomObjet = photosObjet[num]
+                                    objet.setBackground(getResources().getDrawable(nomObjet));
+                                    objet.x = ((width - objet.width) / 2).toFloat()
+                                    //objet.y=(height-objet.y-d).toFloat()
+                                    objet.y = (yObjet).toFloat()
+                                }else{
+                                    objet.visibility=View.INVISIBLE
+                                }
+                            }else{
+                                faux.visibility=View.VISIBLE
+                                Handler().postDelayed({faux.visibility=View.INVISIBLE }, 1000)
+                                objet.x=((width-objet.width)/2).toFloat()
+                                //objet.y= (height-objet.y-d)
+                                objet.y=(yObjet).toFloat()
+                            }
+                        }
+                    }
+                }else {
+                    val x = event?.rawX?.toInt()
+                    val y = event?.rawY?.toInt()
+                    if (y != null) {
+                        objet.y = y.toFloat() - objet.height / 2 - getStatusBarHeight()
+                    }
+                    if (x != null) {
+                        objet.x = x.toFloat() - objet.width / 2
+                    }
+                }
+                return v?.onTouchEvent(event) ?: true
+            }
+        })
+    }
+    private fun getStatusBarHeight(): Int{
+        val rectangle = Rect()
+        val window = window
+        window.decorView.getWindowVisibleDisplayFrame(rectangle)
+        val statusBarHeight: Int = rectangle.top
+        val contentViewTop = window.findViewById<View>(Window.ID_ANDROID_CONTENT).top
+        val titleBarHeight = contentViewTop - statusBarHeight
+        return statusBarHeight
+
+    }
+}
+
+

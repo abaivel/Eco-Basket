@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ecran"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#89F48D"
+    tools:context=".GameActivity">
+
+
+    <ImageView
+        android:id="@+id/poubelleGrise"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="130dp"
+        android:tag="poubelleGrise"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/poubelle_grise" />
+
+    <ImageView
+        android:id="@+id/poubelleRouge"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="150dp"
+        android:tag="poubelleRouge"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/poubelle_rougegrenat" />
+
+    <ImageView
+        android:id="@+id/poubelleMarron"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="150dp"
+        android:tag="poubelleRouge"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/poubelle_marron" />
+
+    <ImageView
+        android:id="@+id/poubelleVerteJaune"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="150dp"
+        android:tag="poubelleJaune"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/poubelle_vertjaune" />
+
+    <ImageView
+        android:id="@+id/compost"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="330dp"
+        android:tag="compost"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/compost" />
+
+    <ImageView
+        android:id="@+id/poubelleVerte"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="130dp"
+        android:tag="poubelleVerte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/poubelle_verte" />
+
+    <ImageView
+        android:id="@+id/bacVert"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="550dp"
+        android:tag="bacVert"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/bac_vert" />
+
+    <ImageView
+        android:id="@+id/bacBleu"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="550dp"
+        android:tag="bacBleu"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bac_bleu" />
+
+    <ImageView
+        android:id="@+id/poubelleBleu"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="150dp"
+        android:tag="poubelleBleu"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/poubelle_bleu" />
+
+    <ImageView
+        android:id="@+id/poubelleJaune"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="330dp"
+        android:tag="poubelleJaune"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/poubelle_jaune" />
+
+    <ImageView
+        android:id="@+id/poubelleBlanche"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="350dp"
+        android:tag="poubelleBlanche"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/poubelle_blanche" />
+
+    <ImageView
+        android:id="@+id/poubelleVerteCompost"
+        android:layout_width="150dp"
+        android:layout_height="250dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="350dp"
+        android:tag="poubelleVerteCompost"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/poubelle_vertecompost" />
+
+    <ImageView
+        android:id="@+id/objet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bouteille"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/vrai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vrai" />
+
+    <ImageView
+        android:id="@+id/faux"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/faux" />
+</androidx.constraintlayout.widget.ConstraintLayout>
