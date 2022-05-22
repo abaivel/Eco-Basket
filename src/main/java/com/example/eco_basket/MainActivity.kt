@@ -103,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             .putString(SHARED_CITY_NAME, ville)
             .apply()
         infos_ville = recup_data(ville)
+        println(objets)
         if (infos_ville.size >0) {
             for (i in 0 until infos_ville.size) {
                 getSharedPreferences(SHARED_CITY_INFO, MODE_PRIVATE)
